@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <style>
+        tr, th, td {
+            border: 1px solid black;
+            padding: 10px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <tr>
+          <th>ID</th>
+          <th>Product Name</th>
+          <th>Qty</th>
+          <th>Time</th>
+          <th>Price</th>
+        </tr>
+        <tr>
+                <% for(let item of allTransection){ %>
+        <% console.log(item)%>
+
+        <td><%=item.id%></td>
+        <td><%=item.product_name%></td>
+        <td><%=item.qty%></td>
+        <td><%=item.date%></td>
+        <td><%=item.total_price%></td>
+
+
+
+    <% } %>
+        </tr>
+      </table>
+
+
+
+
+</body>
+</html>
