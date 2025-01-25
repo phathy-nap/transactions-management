@@ -1,0 +1,1 @@
+This is just a simple project that I want to make. nothing fancy. I make this to learn MVC structure that make project more maintainable and scalable.
