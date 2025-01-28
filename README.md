@@ -1,1 +1,11 @@
-This is just a simple project that I want to make. nothing fancy. I make this to learn MVC structure that make project more maintainable and scalable.
+# Transaction Management Project
+
+## Goal
+
+The goal of this transaction management project is to:
+
+- Work on a project that I think might be useful for business
+- Learn MVC (Model-View-Controller)
+- Use Git for version control
+- Understand how to work in a big project
+- Understand how to work professionally

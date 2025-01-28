@@ -1,23 +1,32 @@
 {
-  "name": "sales_management",
+  "name": "transaction_management",
   "version": "1.0.0",
-  "main": "./src/app.js",
+  "description": "to manage all transactions",
+  "main": "app.js",
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node --env-file .env --watch app.js",
-    "format": "prettier --write ."
+    "dev": "node --env-file=.env --watch app.js",
+    "formatCheck": "prettier --check .",
+    "format": "prettier --write .",
+    "start": "node --env-file=.env app.js"
   },
-  "keywords": [],
-  "author": "phathy",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/phathy-nap/transactions-management.git"
+  },
+  "author": "Phathy",
   "license": "ISC",
-  "description": "",
-  "devDependencies": {
-    "prettier": "^3.4.2"
+  "bugs": {
+    "url": "https://github.com/phathy-nap/transactions-management/issues"
   },
+  "homepage": "https://github.com/phathy-nap/transactions-management#readme",
   "dependencies": {
     "ejs": "^3.1.10",
     "express": "^4.21.2",
     "pg": "^8.13.1"
+  },
+  "devDependencies": {
+    "prettier": "3.4.2"
   }
 }

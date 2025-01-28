@@ -1,45 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Page</title>
-    <style>
-        tr, th, td {
-            border: 1px solid black;
-            padding: 10px;
-
-        }
-    </style>
-</head>
-
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home PAge</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Transactions</h1>
     <table>
+      <tr>
+        <th>id</th>
+        <th>product_name</th>
+        <th>date</th>
+        <th>qty</th>
+        <th>total_price</th>
+      </tr>
+      <% allTransactionsData.forEach(e => {%>
         <tr>
-          <th>ID</th>
-          <th>Product Name</th>
-          <th>Qty</th>
-          <th>Time</th>
-          <th>Price</th>
+          <th><%= e.id %></th>
+          <th><%= e.product_name %></th>
+          <th><%= e.date %></th>
+          <th><%= e.qty %></th>
+          <th><%= e.total_price %></th>
         </tr>
-        <tr>
-                <% for(let item of allTransection){ %>
-        <% console.log(item)%>
-
-        <td><%=item.id%></td>
-        <td><%=item.product_name%></td>
-        <td><%=item.qty%></td>
-        <td><%=item.date%></td>
-        <td><%=item.total_price%></td>
-
-
-
-    <% } %>
-        </tr>
-      </table>
-
-
-
-
-</body>
+      <%  }); %>
+    </table>
+  </body>
 </html>
