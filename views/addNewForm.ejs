@@ -7,5 +7,12 @@
 </head>
 <body>
     <h1>Add New Form</h1>
+
+    <select name="productName" id="productName">
+        <% productName.forEach(e => { %>
+            <option value="<%=e%>"><%=e%></option>
+     <%   }); %>
+    </select>
+
 </body>
 </html>
