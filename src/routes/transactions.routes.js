@@ -1,8 +1,8 @@
 import express from "express";
-import TransactionController from "../controllers/transaction.controller.js";
+import TransactionsController from "../controllers/transaction.controller.js";
 
 const router = express.Router();
 
-router.get("/", TransactionController.getAll)
+router.get("/", TransactionsController.getAll)
 
 export default router;
