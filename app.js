@@ -5,6 +5,7 @@ const app = express();
 
 app.set("view engine", "ejs");
 app.use(express.static('./src/public'))
+app.use(express.urlencoded ({extended: false}))
 
 app.use("/transactions", transactionRouter)
 app.use("/newTransactions", newTransactionsRouter)

@@ -8,11 +8,22 @@
 <body>
     <h1>Add New Form</h1>
 
-    <select name="productName" id="productName">
-        <% productName.forEach(e => { %>
-            <option value="<%=e%>"><%=e%></option>
-     <%   }); %>
-    </select>
+    <form method="post" action="/newTransactions">
+        <select name="productName" id="productName">
+            <% productName.forEach(e => { %>
+                <option name="productName" value="<%=e%>"><%=e%></option>
+         <%   }); %>
+        </select>
+        <select name="qty" id="qty">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
 
+        </select>
+        <button type="submit">Add</button>
+    </form>
 </body>
 </html>

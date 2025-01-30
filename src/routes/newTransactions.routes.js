@@ -3,6 +3,7 @@ import NewTransactionsController from "../controllers/newTransactions.controller
 
 const router = express.Router();
 
-router.get("/", NewTransactionsController.GetForm)
+router.get("/", NewTransactionsController.getForm);
+router.post("/", NewTransactionsController.addTransactions);
 
 export default router;
