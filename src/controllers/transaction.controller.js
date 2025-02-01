@@ -22,6 +22,15 @@ class TransactionsController {
 
   //render edit form with data prefilled.
   static async getEditForm(req, res) {
+    const id = req.params.id;
+    const result = await TransactionsModel.getTranById(id);
+    const productName = await ProductsModel.arrGetName();
+    const existProductName = result.product_name;
+    const existQty = result.qty;
+
+    res.render("editForm", {existProductName, existQty, productName})
+    
+    
   }
 
 }

@@ -3,19 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>New Form</title>
+    <title>Edit Form</title>
 </head>
 <body>
-    <h1>Add New Form</h1>
+    <h1>Edit Form</h1>
 
     <form method="post" action="/new">
         <select name="productName" id="productName">
+            <option selected disabled hidden value="<%= existProductName %>"><%= existProductName %></option>
             <% productName.forEach(e => { %>
                 <option name="productName" value="<%=e%>"><%=e%></option>
          <%   }); %>
         </select>
         <select name="qty" id="qty">
-            <!-- <option value="" selected disabled hidden>Choose here</option> -->
+            <option selected disabled hidden value="<%= existQty %>"><%= existQty %></option>
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>

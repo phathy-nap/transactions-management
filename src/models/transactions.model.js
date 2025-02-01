@@ -1,3 +1,4 @@
+import e from "express";
 import pool from "../config/database.js";
 import ProductsModel from "./products.model.js";
 
@@ -51,7 +52,7 @@ class TransactionsModel {
       WHERE id = ($1)
     `;
       const { rows } = await pool.query(query, [id]);
-      return rows;
+      return rows[0];
     } catch (error) {
       throw new Error(`Can't fetch transactions data by ID ${error.message}`);
     }
