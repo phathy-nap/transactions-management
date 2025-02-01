@@ -8,7 +8,7 @@
   </head>
   <body>
     <h1>Transactions</h1>
-    <a href="/newTransactions">New</a>
+    <a href="/form">New</a>
     <table>
       <tr>
         <th>id</th>
@@ -16,6 +16,7 @@
         <th>date</th>
         <th>qty</th>
         <th>total_price</th>
+        <th>edit</th>
       </tr>
       <% allTransactionsData.forEach(e => {%>
         <tr>
@@ -24,6 +25,7 @@
           <td><%= e.date %></td>
           <td><%= e.qty %></td>
           <td><%= e.total_price %></td>
+          <td><a href="/edit/<%= e.id %>">Edit</a></td>
         </tr>
       <%  }); %>
     </table>
