@@ -18,4 +18,7 @@ router.post("/new", TransactionsController.addTransactions);
 //Edit transactions
 router.post("/edit/:id", TransactionsController.editTran);
 
+//Delete transaction
+router.post("/delete/:id", TransactionsController.deleteTran);
+
 export default router;

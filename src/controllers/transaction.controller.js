@@ -31,12 +31,19 @@ class TransactionsController {
     res.render("editForm", { existProductName, existQty, productName, id });
   }
 
-  //update database
+  //update the database
   static async editTran(req, res) {
     const productName = req.body.productName;
     const qty = req.body.qty;
     const id = req.params.id;
     await TransactionsModel.editTran(productName, qty, id);
+    res.redirect("/");
+  }
+
+  //delete transaction from database
+  static async deleteTran(req, res) {
+    const id = req.params.id;
+    await TransactionsModel.deleteTran(id);
     res.redirect("/");
   }
 }
