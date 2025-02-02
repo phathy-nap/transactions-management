@@ -16,6 +16,7 @@ class TransactionsModel {
           total_price 
         FROM 
           all_transactions
+        ORDER BY id ASC
       `;
       const { rows } = await pool.query(query);
       return rows;
@@ -68,6 +69,18 @@ class TransactionsModel {
       await pool.query(query, [product_name, qty, id]);
     } catch (error) {
       throw new Error(`Can't edit data from database ${error.message}`);
+    }
+  }
+  //delete the transaction from database
+  static async deleteTran(id) {
+    try {
+      const query = `
+      DELETE FROM all_transactions
+      WHERE id = $1;
+    `;
+      await pool.query(query, [id]);
+    } catch (error) {
+      throw new Error(`Can't delete data from database ${error.message}`);
     }
   }
 }

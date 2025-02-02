@@ -17,6 +17,7 @@
         <th>qty</th>
         <th>total_price</th>
         <th>edit</th>
+        <th>delete</th>
       </tr>
       <% allTransactionsData.forEach(e => {%>
         <tr>
@@ -26,6 +27,11 @@
           <td><%= e.qty %></td>
           <td><%= e.total_price %></td>
           <td><a href="/edit/<%= e.id %>">Edit</a></td>
+          <td>
+            <form action="/delete/<%= e.id %>" method="post">
+            <button type="submit">Delete</button>
+          </form>
+        </td>
         </tr>
       <%  }); %>
     </table>
