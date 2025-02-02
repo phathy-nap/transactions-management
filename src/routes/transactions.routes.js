@@ -13,6 +13,9 @@ router.get("/form", TransactionsController.getForm);
 router.get("/edit/:id", TransactionsController.getEditForm);
 
 //Add new data to database
-router.post("/new/", TransactionsController.addTransactions);
+router.post("/new", TransactionsController.addTransactions);
+
+//Edit transactions
+router.post("/edit/:id", TransactionsController.editTran);
 
 export default router;

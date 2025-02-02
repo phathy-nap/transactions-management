@@ -57,6 +57,19 @@ class TransactionsModel {
       throw new Error(`Can't fetch transactions data by ID ${error.message}`);
     }
   }
+  //edit the transaction from database
+  static async editTran(product_name, qty, id) {
+    try {
+      const query = `
+      UPDATE all_transactions
+      SET product_name = $1, qty = $2
+      WHERE id = $3;
+    `;
+      await pool.query(query, [product_name, qty, id]);
+    } catch (error) {
+      throw new Error(`Can't edit data from database ${error.message}`);
+    }
+  }
 }
 
 export default TransactionsModel;

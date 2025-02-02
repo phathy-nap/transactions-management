@@ -8,15 +8,15 @@
 <body>
     <h1>Edit Form</h1>
 
-    <form method="post" action="/new">
+    <form method="post" action="/edit/<%= id %>">
         <select name="productName" id="productName">
-            <option selected disabled hidden value="<%= existProductName %>"><%= existProductName %></option>
+            <option selected hidden value="<%= existProductName %>"><%= existProductName %></option>
             <% productName.forEach(e => { %>
                 <option name="productName" value="<%=e%>"><%=e%></option>
          <%   }); %>
         </select>
         <select name="qty" id="qty">
-            <option selected disabled hidden value="<%= existQty %>"><%= existQty %></option>
+            <option selected hidden value="<%= existQty %>"><%= existQty %></option>
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
@@ -24,7 +24,7 @@
             <option value="5">5</option>
             <option value="6">6</option>
         </select>
-        <button type="submit">Add</button>
+        <button type="submit">Edit</button>
     </form>
 </body>
 </html>
