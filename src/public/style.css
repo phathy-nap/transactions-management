@@ -1,4 +1,5 @@
-th, td {
-    border: 1px solid;
-    padding: 1em;
-  }
+th,
+td {
+  border: 1px solid;
+  padding: 1em;
+}

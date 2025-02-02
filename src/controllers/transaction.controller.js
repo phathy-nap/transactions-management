@@ -16,7 +16,7 @@ class TransactionsController {
   static async addTransactions(req, res) {
     const product_name = req.body.productName;
     const qty = req.body.qty;
-    await TransactionsModel.addNew(product_name, qty)
+    await TransactionsModel.addNew(product_name, qty);
     res.redirect("/");
   }
 
@@ -28,11 +28,17 @@ class TransactionsController {
     const existProductName = result.product_name;
     const existQty = result.qty;
 
-    res.render("editForm", {existProductName, existQty, productName})
-    
-    
+    res.render("editForm", { existProductName, existQty, productName, id });
   }
 
+  //update database
+  static async editTran(req, res) {
+    const productName = req.body.productName;
+    const qty = req.body.qty;
+    const id = req.params.id;
+    await TransactionsModel.editTran(productName, qty, id);
+    res.redirect("/");
+  }
 }
 
 export default TransactionsController;
